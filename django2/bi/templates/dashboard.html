@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard Produk - Actual vs Predicted</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .chart-container {
+        margin-bottom: 50px;
+      }
+      canvas {
+        background: #fff;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📊 Dashboard Produk (Actual vs Predicted)</h1>
+
+    <div class="chart-container">
+      <h3>📈 Jumlah Produk per Kategori (Actual vs Predicted)</h3>
+      <iframe
+        src="/chart/category-actual-predicted/"
+        width="100%"
+        height="500"
+        frameborder="0"
+      ></iframe>
+    </div>
+
+    <div class="chart-container">
+      <h3>📉 Rata-rata Harga (Actual vs Predicted)</h3>
+      <iframe
+        src="/analysis/price/"
+        width="100%"
+        height="500"
+        frameborder="0"
+      ></iframe>
+    </div>
+
+    <div class="chart-container">
+      <h3>⭐ Rata-rata Rating per Bulan (Actual vs Predicted)</h3>
+      <iframe
+        src="/chart/rating-actual-predicted/"
+        width="100%"
+        height="500"
+        frameborder="0"
+      ></iframe>
+    </div>
+
+    <div class="chart-container">
+      <h3>💰 Rata-rata Harga per Kategori (Actual vs Predicted)</h3>
+      <iframe
+        src="/chart/avg-price-actual-predicted/"
+        width="100%"
+        height="500"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </body>
+</html>

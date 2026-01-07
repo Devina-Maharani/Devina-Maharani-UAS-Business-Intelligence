@@ -1,0 +1,10 @@
+{"timestamp":"2025-06-14T12:00:43.617014","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-06-14T12:00:43.617827","level":"info","event":"Filling up the DagBag from /root/airflow/dags/etl_star_schema.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-06-14T12:00:43.662752Z","level":"info","event":"Task instance is in running state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-14T12:00:43.663233Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-14T12:00:43.663383Z","level":"info","event":"Current task name:transform","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-14T12:00:43.663464Z","level":"info","event":"Dag name:etl_star_schema","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-14T12:00:46.921580","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-06-14T12:00:46.948035Z","level":"info","event":"Task instance in success state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-14T12:00:46.948194Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-14T12:00:46.948320Z","level":"info","event":"Task operator:<Task(PythonOperator): transform>","chan":"stdout","logger":"task"}

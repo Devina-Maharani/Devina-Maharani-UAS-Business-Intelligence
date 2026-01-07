@@ -1,0 +1,11 @@
+category_id,category_name,parent_category_id,category_level,category_path,is_standardized,created_at,updated_at
+2612,Mobile Phones,,1,Mobile Phones,True,2025-06-14 13:52:22,2025-06-14 13:52:22
+2614,TVs,,1,TVs,True,2025-06-14 13:52:22,2025-06-14 13:52:22
+2615,CPUs,,1,CPUs,True,2025-06-14 13:52:22,2025-06-14 13:52:22
+2617,Digital Cameras,,1,Digital Cameras,True,2025-06-14 13:52:22,2025-06-14 13:52:22
+2618,Microwaves,,1,Microwaves,True,2025-06-14 13:52:22,2025-06-14 13:52:22
+2619,Dishwashers,,1,Dishwashers,True,2025-06-14 13:52:22,2025-06-14 13:52:22
+2620,Washing Machines,,1,Washing Machines,True,2025-06-14 13:52:22,2025-06-14 13:52:22
+2621,Freezers,,1,Freezers,True,2025-06-14 13:52:22,2025-06-14 13:52:22
+2622,Fridge Freezers,,1,Fridge Freezers,True,2025-06-14 13:52:22,2025-06-14 13:52:22
+2623,Fridges,,1,Fridges,True,2025-06-14 13:52:22,2025-06-14 13:52:22

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Average Price (Actual vs Predicted)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background-color: #f4f4f9;
+        text-align: center;
+      }
+      h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      .chart-container {
+        max-width: 1000px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>💰 Average Price per Month (Actual vs Predicted)</h2>
+    <div class="chart-container">
+      <canvas id="priceChart" height="400"></canvas>
+    </div>
+
+    <script>
+      const ctx = document.getElementById('priceChart').getContext('2d');
+      const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: {{ labels|safe }},
+          datasets: [
+            {
+              label: 'Actual Price',
+              data: {{ actual|safe }},
+              fill: true,
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              tension: 0.4,
+              pointRadius: 4,
+              pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 2
+            },
+            {
+              label: 'Predicted Price',
+              data: {{ predicted|safe }},
+              fill: true,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderDash: [5, 5],
+              tension: 0.4,
+              pointRadius: 4,
+              pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: false
+            },
+            legend: {
+              position: 'top',
+              labels: {
+                font: {
+                  size: 14
+                }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': Rp' + context.parsed.y.toLocaleString('id-ID');
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Bulan'
+              },
+              ticks: {
+                font: {
+                  size: 12
+                },
+                maxRotation: 45,
+                minRotation: 45
+              }
+            },
+            y: {
+              beginAtZero: false,
+              title: {
+                display: true,
+                text: 'Harga (Rp)'
+              },
+              ticks: {
+                callback: function(value) {
+                  return 'Rp' + value.toLocaleString('id-ID');
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{"timestamp":"2025-06-12T13:27:40.431803","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-06-12T13:27:40.433201","level":"info","event":"Filling up the DagBag from /root/airflow/dags/etl_pricerunner.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-06-12T13:27:40.506076Z","level":"info","event":"Task instance is in running state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-12T13:27:40.506315Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-12T13:27:40.506412Z","level":"info","event":"Current task name:transform","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-12T13:27:40.506494Z","level":"info","event":"Dag name:etl_pricerunner","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-12T13:27:40.569280Z","level":"info","event":"Kolom CSV: ['Product ID', 'Product Title', 'Merchant ID', 'Cluster ID', 'Cluster Label', 'Category ID', 'Category Label']","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-12T13:27:40.584577","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-06-12T13:27:40.624111Z","level":"info","event":"Task instance in success state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-12T13:27:40.624302Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-12T13:27:40.624446Z","level":"info","event":"Task operator:<Task(PythonOperator): transform>","chan":"stdout","logger":"task"}

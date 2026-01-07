@@ -1,0 +1,10 @@
+{"timestamp":"2025-06-15T07:34:38.945499","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-06-15T07:34:38.946521","level":"info","event":"Filling up the DagBag from /root/airflow/dags/etl_star_schema.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-06-15T07:34:39.267462Z","level":"info","event":"Task instance is in running state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-15T07:34:39.267646Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-15T07:34:39.267747Z","level":"info","event":"Current task name:extract","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-15T07:34:39.267849Z","level":"info","event":"Dag name:etl_star_schema","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-15T07:34:39.267924Z","level":"info","event":"Task instance in success state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-15T07:34:39.267993Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-15T07:34:39.268068Z","level":"info","event":"Task operator:<Task(PythonOperator): extract>","chan":"stdout","logger":"task"}
+{"timestamp":"2025-06-15T07:34:39.253846","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

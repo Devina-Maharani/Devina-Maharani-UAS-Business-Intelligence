@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Average Rating per Month (Actual vs Predicted)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background-color: #f4f4f9;
+        text-align: center;
+      }
+      h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      .chart-container {
+        max-width: 900px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>⭐ Average Rating per Month (Actual vs Predicted)</h2>
+    <div class="chart-container">
+      <canvas id="ratingChart" height="400"></canvas>
+    </div>
+
+    <script>
+      const ctx = document.getElementById('ratingChart').getContext('2d');
+      const ratingChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: {{ labels|safe }},
+          datasets: [
+            {
+              label: 'Actual Rating',
+              data: {{ actual|safe }},
+              fill: true,
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              tension: 0.4,
+              pointRadius: 4,
+              pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 2
+            },
+            {
+              label: 'Predicted Rating',
+              data: {{ predicted|safe }},
+              fill: true,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderDash: [5, 5],
+              tension: 0.4,
+              pointRadius: 4,
+              pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Bulan'
+              },
+              ticks: {
+                maxRotation: 45,
+                minRotation: 45,
+                font: {
+                  size: 12
+                }
+              }
+            },
+            y: {
+              min: 3.5,
+              max: 5.0,
+              title: {
+                display: true,
+                text: 'Rata-rata Rating'
+              },
+              ticks: {
+                stepSize: 0.2,
+                font: {
+                  size: 14
+                }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                font: {
+                  size: 14
+                }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + context.parsed.y.toFixed(2);
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

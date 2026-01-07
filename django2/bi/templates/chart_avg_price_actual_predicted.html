@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rata-rata Harga per Kategori</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      .chart-container {
+        width: 100%;
+        max-width: 1000px;
+        height: 500px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📊 Rata-rata Harga per Kategori (Aktual vs Prediksi)</h2>
+    <div class="chart-container">
+      <canvas id="priceChart"></canvas>
+    </div>
+
+    <script>
+      const ctx = document.getElementById('priceChart').getContext('2d');
+      const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: {{ labels|safe }},
+          datasets: [
+            {
+              label: 'Harga Aktual',
+              data: {{ actual|safe }},
+              fill: true,
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              tension: 0.3,
+              pointRadius: 3
+            },
+            {
+              label: 'Harga Prediksi',
+              data: {{ predicted|safe }},
+              fill: true,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderDash: [4, 4],
+              tension: 0.3,
+              pointRadius: 3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Harga (Rp)'
+              }
+            },
+            x: {
+              ticks: {
+                autoSkip: false,
+                maxRotation: 45,
+                minRotation: 45
+              },
+              title: {
+                display: true,
+                text: 'Kategori Produk'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top'
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return 'Rp ' + context.parsed.y.toLocaleString();
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

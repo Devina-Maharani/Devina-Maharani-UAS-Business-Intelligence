@@ -1,0 +1,2 @@
+date_id,full_date,day_of_week,day_name,month,month_name,quarter,year,is_weekend
+1,2025-06-15,7,Sunday,6,June,2,2025,True
